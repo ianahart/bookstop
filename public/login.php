@@ -1,7 +1,8 @@
 <?php
 session_start();
-include('../config/db.php');
+// include('config/db.php');
 
+require __DIR__ . '../config.php';
 
 
 
