@@ -214,7 +214,7 @@ if (isset($_POST['downvote'])) {
     </div>
   </div>
   <?php include('public/templates/footer.php'); ?>
-  <script src="js/booksFilter.js"></script>
+  <script src="public/js/booksFilter.js"></script>
 </body>
 
 </html>
