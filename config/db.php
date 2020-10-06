@@ -15,7 +15,7 @@ $dotenv->load();
 
 
 
-$conn = mysqli_connect('us-cdbr-east-02.cleardb.com', 'b2cf0765c84f57', '81e92f78', 'heroku_3f34e06ba4944be');
+$conn = mysqli_connect($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASSWORD'], $_ENV['DB']);
 
 
 if (!$conn) {
