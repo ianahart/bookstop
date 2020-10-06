@@ -54,8 +54,8 @@ function sendEmailVerification($email, $token)
   $mail->isSMTP();
   $mail->Host       =  'smtp.gmail.com';
   $mail->SMTPAuth   = true;
-  $mail->Username   = getenv('MAIL_USERNAME');
-  $mail->Password   = getenv('MAIL_PASSWORD');
+  $mail->Username   = 'ianhart7790@gmail.com';
+  $mail->Password   = 'Youcandoit7790';
   $mail->SMTPSecure = 'tls1.3';
   $mail->Port       = 25;
 
