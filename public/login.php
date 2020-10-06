@@ -1,6 +1,6 @@
 <?php
 
-include('public/db.php');
+include('db.php');
 
 session_start();
 
