@@ -3,16 +3,14 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-use Dotenv\Dotenv;
 
-session_start();
+require '../vendor/autoload.php';
 
-include(dirname(__DIR__) . '/vendor/autoload.php');
 include(dirname(__DIR__) . '/config/db.php');
 
 
-$dotenv = Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+session_start();
+
 
 $mail = new PHPMailer(true);
 
@@ -56,8 +54,8 @@ function sendEmailVerification($email, $token)
   $mail->isSMTP();
   $mail->Host       =  'smtp.gmail.com';
   $mail->SMTPAuth   = true;
-  $mail->Username   = $_ENV['MAIL_USERNAME'];
-  $mail->Password   = $_ENV['MAIL_PASSWORD'];
+  $mail->Username   = getenv('MAIL_USERNAME');
+  $mail->Password   = getenv('MAIL_PASSWORD');
   $mail->SMTPSecure = 'tls1.3';
   $mail->Port       = 25;
 
