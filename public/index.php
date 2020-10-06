@@ -41,7 +41,7 @@ if (isset($_SESSION['user'])) {
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include('/templates/head.php'); ?>
+<?php include('public/templates/head.php'); ?>
 
 
 <body>
