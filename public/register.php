@@ -131,11 +131,11 @@ if (isset($_POST['submit'])) {
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include('./templates/head.php'); ?>
+<?php include('public/templates/head.php'); ?>
 
 <body>
   <div class="content">
-    <?php include('./templates/nav.php'); ?>
+    <?php include('public/templates/nav.php'); ?>
     <div class="register-form">
       <form action="register.php" method="POST">
         <h1>Create Account</h1>
@@ -176,7 +176,7 @@ if (isset($_POST['submit'])) {
     </div>
   </div>
 
-  <?php include('./templates/footer.php'); ?>
+  <?php include('public/templates/footer.php'); ?>
 </body>
 
 </html>
