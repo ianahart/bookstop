@@ -13,14 +13,9 @@ $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-$server = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$db = substr($url["path"], 1);
 
-$conn = mysqli_connect($server, $username, $password, $db);
+$conn = mysqli_connect($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASSWORD'], $_ENV['DB'], 3306);
 
 
 if (!$conn) {
