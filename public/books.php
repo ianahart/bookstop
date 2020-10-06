@@ -171,12 +171,12 @@ if (isset($_POST['downvote'])) {
 
 <!DOCTYPE html>
 <html lang="en">
-<?php include('./templates/head.php'); ?>
+<?php include('public/templates/head.php'); ?>
 
 <body>
   <div class="content">
-    <?php include('./templates/nav.php'); ?>
-    <?php include('./templates/filterbooks.php'); ?>
+    <?php include('public/templates/nav.php'); ?>
+    <?php include('public/templates/filterbooks.php'); ?>
     <div class="books-container">
       <?php foreach ($books as $book) : ?>
         <div class="book">
@@ -212,7 +212,7 @@ if (isset($_POST['downvote'])) {
       <?php endforeach; ?>
     </div>
   </div>
-  <?php include('./templates/footer.php'); ?>
+  <?php include('public/templates/footer.php'); ?>
   <script src="js/booksFilter.js"></script>
 </body>
 
