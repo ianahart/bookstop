@@ -67,7 +67,7 @@ function sendEmailVerification($email, $token)
   $mail->isHTML(true);
   $mail->Subject = 'Reset Password on Bookstop';
   //CHANGE LINK ADDRESS
-  $mail->Body    = "Hi there, click on this <a href=\"https://murmuring-ridge-11006.herokuapp.com//newpassword.php?token=" . $token . "\">link</a> to reset your password on our site";
+  $mail->Body    = "Hi there, click on this <a href=\"https://murmuring-ridge-11006.herokuapp.com/newpassword.php?token=" . $token . "\">link</a> to reset your password on our site";
 
   $mail->send();
 
