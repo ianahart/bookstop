@@ -1,0 +1,14 @@
+{
+    "name": "owner/bookstop",
+    "authors": [
+        {
+            "name": "Ian Hart",
+            "email": "ianhart7790@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.0",
+        "phpmailer/phpmailer": "^6.1",
+        "vlucas/phpdotenv": "^5.2"
+    }
+}
