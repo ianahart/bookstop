@@ -54,8 +54,8 @@ if (isset($_SESSION['user'])) {
       </div>
 
       <div class="images-container">
-        <img src="./img/home-1.jpg" alt="books" />
-        <img src="./img/home-2.jpg" alt="books" />
+        <img src="public/img/home-1.jpg" alt="books" />
+        <img src="public/img/home-2.jpg" alt="books" />
       </div>
     </section>
     <section class="extra-info">
