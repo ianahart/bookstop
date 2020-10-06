@@ -23,7 +23,7 @@ session_start();
       <section class="about-information">
         <section class="about-row">
           <div class="about-image-container">
-            <img src="img/about-1.jpg" alt="office" />
+            <img src="public/img/about-1.jpg" alt="office" />
           </div>
           <div>
             <h3>Our Story</h3>
@@ -36,7 +36,7 @@ session_start();
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus eius dolorem molestiae temporibus aliquid aliquam laboriosam, vero adipisci commodi. At, optio voluptate consequatur repellendus consequuntur perferendis quod sapiente ullam hic libero, nisi possimus nostrum qui sunt quaerat? Temporibus modi animi, sapiente quibusdam in quam harum saepe, voluptates illum provident nostrum.</p>
           </div>
           <div class="about-image-container">
-            <img src="img/about-2.jpg" alt="books" />
+            <img src="public/img/about-2.jpg" alt="books" />
           </div>
         </section>
       </section>
