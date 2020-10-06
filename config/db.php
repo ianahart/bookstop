@@ -1,18 +1,6 @@
 <?php
 
 
-// require "../vendor/autoload.php";
-
-// include(dirname(__DIR__) . '/vendor/autoload.php');
-
-// use Dotenv\Dotenv;
-
-
-
-
-
-// $dotenv = Dotenv::createImmutable(__DIR__);
-// $dotenv->load();
 
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
