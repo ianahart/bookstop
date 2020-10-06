@@ -1,5 +1,6 @@
 <?php
-include('../config/db.php');
+include(dirname(__DIR__) . '/config/db.php');
+
 
 session_start();
 
@@ -162,11 +163,11 @@ if (isset($_POST['submit'])) {
 
 <!DOCTYPE html>
 <html lang="en">
-<?php include('./templates/head.php'); ?>
+<?php include('public/templates/head.php'); ?>
 
 <body>
   <div class="content">
-    <?php include('./templates/nav.php'); ?>
+    <?php include('public/templates/nav.php'); ?>
     <div class="create-profile-form">
       <form action="createprofile.php" method="POST" enctype='multipart/form-data'>
         <h1>Create Profile</h1>
@@ -207,7 +208,7 @@ if (isset($_POST['submit'])) {
       </form>
     </div>
   </div>
-  <?php include('./templates/footer.php'); ?>
+  <?php include('public/templates/footer.php'); ?>
 </body>
 
 </html>

@@ -6,7 +6,8 @@ use PHPMailer\PHPMailer\Exception;
 
 require '../vendor/autoload.php';
 
-include('../config/db.php');
+include(dirname(__DIR__) . '/config/db.php');
+
 
 session_start();
 
@@ -53,8 +54,8 @@ function sendEmailVerification($email, $token)
   $mail->isSMTP();
   $mail->Host       =  'smtp.gmail.com';
   $mail->SMTPAuth   = true;
-  $mail->Username   = $_ENV['MAIL_USERNAME'];
-  $mail->Password   = $_ENV['MAIL_PASSWORD'];
+  $mail->Username   = getenv('MAIL_USERNAME');
+  $mail->Password   = getenv('MAIL_PASSWORD');
   $mail->SMTPSecure = 'tls1.3';
   $mail->Port       = 25;
 
@@ -107,11 +108,11 @@ if (isset($_POST['submit'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<?php include('./templates/head.php'); ?>
+<?php include('public/templates/head.php'); ?>
 
 <body>
   <div class="content">
-    <?php include('./templates/nav.php'); ?>
+    <?php include('public/templates/nav.php'); ?>
     <div class="forgot-password-form">
       <form action="forgotpassword.php" method="POST" autocomplete="false">
         <h1>Reset Password</h1>
@@ -128,7 +129,7 @@ if (isset($_POST['submit'])) {
       </form>
     </div>
   </div>
-  <?php include('./templates/footer.php') ?>
+  <?php include('public/templates/footer.php') ?>
 </body>
 
 </html>

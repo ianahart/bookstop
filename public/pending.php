@@ -15,17 +15,17 @@ if (isset($_GET)) {
 
 <!DOCTYPE html>
 <html lang="en">
-<?php include('./templates/head.php'); ?>
+<?php include('public/templates/head.php'); ?>
 
 <body>
   <div class="content">
-    <?php include('./templates/nav.php'); ?>
+    <?php include('public/templates/nav.php'); ?>
     <div class="pending">
       <p>We sent an email to <strong><?php echo htmlspecialchars($email); ?></strong> to help you recover your account </p>
       <p>Please login into your email account and click on the link we sent you to reset your password</p>
     </div>
   </div>
-  <?php include('./templates/footer.php') ?>
+  <?php include('public/templates/footer.php') ?>
 </body>
 
 </html>

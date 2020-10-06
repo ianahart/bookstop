@@ -1,6 +1,7 @@
 <?php
 
-include('../config/db.php');
+include(dirname(__DIR__) . '/config/db.php');
+
 
 function getPicture($conn, $id)
 {
