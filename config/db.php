@@ -1,7 +1,9 @@
 <?php
 
 
-require "../vendor/autoload.php";
+// require "../vendor/autoload.php";
+
+include(dirname(__DIR__) . '/vendor/autoload.php');
 
 use Dotenv\Dotenv;
 
