@@ -1,6 +1,6 @@
 <?php
 
-include('../config/db.php');
+include('public/db.php');
 
 session_start();
 
@@ -136,7 +136,7 @@ if (isset($_POST['submit'])) {
     <?php include('public/templates/nav.php'); ?>
 
     <div class="login-form">
-      <form id="login-form" action="/login.php" method="POST" autocomplete="false">
+      <form id="login-form" action="login.php" method="POST" autocomplete="false">
         <h1>Login</h1>
         <?php if (isset($_SESSION['login_attempts']) && $_SESSION['login_attempts'] > 4) : ?>
           <p>Too many unsuccessful Login attempts. Please wait ten minutes and refresh the page.</p>
