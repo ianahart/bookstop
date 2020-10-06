@@ -10,11 +10,11 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include('./templates/head.php'); ?>
+<?php include('public/templates/head.php'); ?>
 
 <body>
   <div class="content">
-    <?php include('./templates/nav.php'); ?>
+    <?php include('public/templates/nav.php'); ?>
     <section class="about-jumbotron">
       <div class="about-header">
         <h1>About Bookstop</h1>
@@ -41,7 +41,7 @@ session_start();
         </section>
       </section>
   </div>
-  <?php include('./templates/footer.php'); ?>
+  <?php include('public/templates/footer.php'); ?>
 </body>
 
 </html>
