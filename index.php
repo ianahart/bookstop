@@ -13,4 +13,7 @@ switch ($request) {
   case '/login.php':
     include __DIR__ . '/public/login.php';
     break;
+  case '/books.php':
+    include __DIR__ . '/public/books.php';
+    break;
 }
