@@ -2,7 +2,23 @@
 session_start();
 // include('config/db.php');
 
-require __DIR__ . '../config.php';
+require "../vendor/autoload.php";
+
+use Dotenv\Dotenv;
+
+
+
+
+
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+
+
+
+$conn = mysqli_connect($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASSWORD'], $_ENV['DB']);
+
+
 
 
 
