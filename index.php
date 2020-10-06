@@ -34,7 +34,7 @@ switch ($request) {
   case '/forgotpassword.php':
     include __DIR__ . '/public/forgotpassword.php';
     break;
-  case '/pending.php':
+  case '/pending.php?':
     include __DIR__ . '/public/pending.php';
     break;
 }
