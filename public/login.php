@@ -4,6 +4,7 @@ include('/config/db.php');
 
 session_start();
 
+print_r($conn);
 
 
 if (!isset($_SESSION['login_attempts'])) {
