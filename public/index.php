@@ -1,16 +1,7 @@
 <?php
 session_start();
 
-require "../vendor/autoload.php";
 
-use Dotenv\Dotenv;
-
-
-
-
-
-$dotenv = Dotenv::createImmutable(__DIR__);
-$dotenv->load();
 
 include('../config/db.php');
 
@@ -50,7 +41,7 @@ if (isset($_SESSION['user'])) {
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include('public/templates/head.php'); ?>
+<?php include('/templates/head.php'); ?>
 
 
 <body>
