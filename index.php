@@ -22,4 +22,19 @@ switch ($request) {
   case '/register.php':
     include __DIR__ . '/public/register.php';
     break;
+  case '/logout.php':
+    include __DIR__ . '/public/logout.php';
+    break;
+  case '/createprofile.php':
+    include __DIR__ . '/public/createprofile.php';
+    break;
+  case '/newpassword.php':
+    include __DIR__ . '/public/newpassword.php';
+    break;
+  case '/forgotpassword.php':
+    include __DIR__ . '/public/forgotpassword.php';
+    break;
+  case '/pending.php':
+    include __DIR__ . '/public/pending.php';
+    break;
 }
