@@ -199,7 +199,7 @@ if (isset($_POST['downvote'])) {
           <?php endif; ?>
           <h3 class="book-title"><?php echo htmlspecialchars($book['title']); ?></h3>
           <div class="book-image-container">
-            <img src="img/book.png" />
+            <img src="public/img/book.png" />
           </div>
           <h5 class="book-author"><span>By</span>: <?php echo htmlspecialchars($book['author']); ?></h5>
           <h5>Published Date: <?php echo htmlspecialchars($book['published']);  ?></h5>
