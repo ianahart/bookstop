@@ -10,4 +10,7 @@ switch ($request) {
   case '/index.php':
     include __DIR__ . '/public/index.php';
     break;
+  case '/login.php':
+    include __DIR__ . '/public/login.php';
+    break;
 }
