@@ -41,12 +41,12 @@ if (isset($_SESSION['user'])) {
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include('./templates/head.php'); ?>
+<?php include('public/templates/head.php'); ?>
 
 
 <body>
   <div class="content">
-    <?php include('./templates/nav.php'); ?>
+    <?php include('public/templates/nav.php'); ?>
     <section class="jumbotron">
       <div class="home-header">
         <h1>The Premier Stop For Book Information</h1>
@@ -72,7 +72,7 @@ if (isset($_SESSION['user'])) {
     </section>
   </div>
 
-  <?php include('./templates/footer.php'); ?>
+  <?php include('public/templates/footer.php'); ?>
 </body>
 
 </html>
