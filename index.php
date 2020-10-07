@@ -28,7 +28,7 @@ switch ($request) {
   case '/createprofile.php':
     include __DIR__ . '/public/createprofile.php';
     break;
-  case '/newpassword.php':
+  case '/newpassword.php?token=' . $_GET['token']:
     include __DIR__ . '/public/newpassword.php';
     break;
   case '/forgotpassword.php':
