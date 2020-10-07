@@ -52,10 +52,10 @@ function sendEmailVerification($email, $token)
   //Server settings
   $mail->SMTPDebug = 2;
   $mail->isSMTP();
-  $mail->Host       =  'smtp.aol.com';
+  $mail->Host       =  'smtp.gmail.com';
   $mail->SMTPAuth   = true;
-  $mail->Username   = 'edabitphp@aol.com';
-  $mail->Password   = 'test123456789';
+  $mail->Username   = getenv('MAIL_USERNAME');
+  $mail->Password   = getenv('MAIL_PASSWORD');
   $mail->SMTPSecure = 'tls1.3';
   $mail->Port       = 25;
 
