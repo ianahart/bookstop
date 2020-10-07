@@ -154,7 +154,7 @@ if (isset($_POST['submit'])) {
 <body>
   <div class="content">
     <?php include('public/templates/nav.php'); ?>
-    <p><?php echo $response; ?></p>
+    <p><?php print_r($response); ?></p>
     <div class="login-form">
       <form id="login-form" action="login.php" method="POST" autocomplete="false">
         <h1>Login</h1>
