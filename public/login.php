@@ -44,6 +44,24 @@ function flagIPAddress($conn)
   mysqli_query($conn, $sql);
 }
 
+function proxyRequest()
+{
+  $fixieUrl = getenv("FIXIE_URL");
+  $parsedFixieUrl = parse_url($fixieUrl);
+
+  $proxy = $parsedFixieUrl['host'] . ":" . $parsedFixieUrl['port'];
+  $proxyAuth = $parsedFixieUrl['user'] . ":" . $parsedFixieUrl['pass'];
+
+  $ch = curl_init('https://murmuring-ridge-11006.herokuapp.com/');
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_PROXY, $proxy);
+  curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyAuth);
+  curl_close($ch);
+}
+
+$response = proxyRequest();
+print_r($response);
+
 function deleteExpiredIPAddresses($conn)
 {
   $secondsToWait = 60;
@@ -136,7 +154,7 @@ if (isset($_POST['submit'])) {
 <body>
   <div class="content">
     <?php include('public/templates/nav.php'); ?>
-
+    <p><?php echo $response; ?></p>
     <div class="login-form">
       <form id="login-form" action="login.php" method="POST" autocomplete="false">
         <h1>Login</h1>
