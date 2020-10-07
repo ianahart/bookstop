@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include('../config/db.php');
+include(dirname(__DIR__) . '/config/db.php');
 
 if (!isset($_SESSION['user'])) {
   header("Location: login.php");
@@ -54,11 +54,11 @@ $numOfBooks = count($ownerBooks);
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include('./templates/head.php'); ?>
+<?php include('public/templates/head.php'); ?>
 
 <body>
   <div class="content">
-    <?php include('./templates/nav.php'); ?>
+    <?php include('public/templates/nav.php'); ?>
     <div>
       <h3 class="mybook-heading">You have submitted <span class="num-of-books"><?php echo $numOfBooks; ?></span> books</h3>
     </div>
@@ -68,7 +68,7 @@ $numOfBooks = count($ownerBooks);
           <div class="mybook-left-column">
             <h3><?php echo htmlspecialchars($book['title']); ?></h3>
             <div class="mybook-img-container">
-              <a href="bookdetails.php?id=<?php echo htmlspecialchars($book['id']); ?>"><img src="<?php echo !empty($book['image']) ? htmlspecialchars($book['image']) : 'img/book.png' ?>" alt="<?php echo htmlspecialchars($book['title']); ?>" /></a>
+              <a href="bookdetails.php?id=<?php echo htmlspecialchars($book['id']); ?>"><img src="<?php echo !empty($book['image']) ? htmlspecialchars($book['image']) : 'public/img/book.png' ?>" alt="<?php echo htmlspecialchars($book['title']); ?>" /></a>
             </div>
           </div>
           <div class="mybook-right-column">
@@ -79,7 +79,7 @@ $numOfBooks = count($ownerBooks);
       <?php endforeach; ?>
     </div>
   </div>
-  <?php include('./templates/footer.php'); ?>
+  <?php include('public/templates/footer.php'); ?>
 </body>
 
 </html>
