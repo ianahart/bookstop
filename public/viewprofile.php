@@ -1,5 +1,5 @@
 <?php
-include('../config/db.php');
+include(dirname(__DIR__) . '/config/db.php');
 
 session_start();
 
@@ -70,11 +70,11 @@ $userProfile = fetchUserProfile($conn, $userId);
 
 <!DOCTYPE html>
 <html lang="en">
-<?php include('./templates/head.php'); ?>
+<?php include('public/templates/head.php'); ?>
 
 <body>
   <div class="content">
-    <?php include('./templates/nav.php'); ?>
+    <?php include('public/templates/nav.php'); ?>
     <div class="view-profile-container">
       <div class="view-profile">
         <div class="profile-username">
@@ -100,7 +100,7 @@ $userProfile = fetchUserProfile($conn, $userId);
       </div>
     </div>
   </div>
-  <?php include('./templates/footer.php'); ?>
+  <?php include('public/templates/footer.php'); ?>
 </body>
 
 </html>
