@@ -1,10 +1,10 @@
 <?php
 
-include('../config/db.php');
+include(dirname(__DIR__) . '/config/db.php');
 
 use GuzzleHttp\Client;
 
-require '../vendor/autoload.php';
+require(dirname(__DIR__) . '/vendor/autoload.php');
 
 
 use function GuzzleHttp\json_decode;
@@ -185,11 +185,11 @@ if (isset($_POST['submit'])) {
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include('./templates/head.php'); ?>
+<?php include('public/templates/head.php'); ?>
 
 <body>
   <div class="content">
-    <?php include('./templates/nav.php'); ?>
+    <?php include('public/templates/nav.php'); ?>
     <div class="addbook-form">
       <?php if (!isset($_SESSION['profileId'])) : ?>
         <h4>Create your user profile to add a book</h4>
@@ -246,7 +246,7 @@ if (isset($_POST['submit'])) {
       </form>
     </div>
   </div>
-  <?php include('./templates/footer.php'); ?>
+  <?php include('public/templates/footer.php'); ?>
 </body>
 
 </html>
