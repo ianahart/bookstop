@@ -149,20 +149,20 @@ if (isset($_POST['submit'])) {
   <div class="content">
     <?php include('public/templates/nav.php'); ?>
     <div class="new-password-form">
-      <form action="newpassword.php" method="POST" autocomplete="false">
+      <form action="newpassword.php?token=<?php echo $_SESSION['token']; ?>" method="POST" autocomplete="false">
         <h1>New Password</h1>
         <div>
           <p class="form-error"><?php echo $errors['match']; ?></p>
         </div>
         <div class="input-group">
-          <label>Password:</label>
+          <label>New Password:</label>
           <input type="password" name="password" />
           <div>
             <p class="form-error"><?php echo $errors['password']; ?></p>
           </div>
         </div>
         <div class="input-group">
-          <label>Confirm Password:</label>
+          <label>Confirm New Password:</label>
           <input type="password" name="password2" />
         </div>
         <div>
