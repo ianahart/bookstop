@@ -1,6 +1,8 @@
 <?php
 
-include(dirname(__DIR__) . '/config/db.php');
+require __DIR__ . '/config/db.php';
+
+
 
 
 
