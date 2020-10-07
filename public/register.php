@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../config/db.php');
+include(dirname(__DIR__) . '/config/db.php');
 
 
 if (isset($_SESSION['user'])) {
