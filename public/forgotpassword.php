@@ -54,8 +54,8 @@ function sendEmailVerification($email, $token)
   $mail->isSMTP();
   $mail->Host       =  'smtp.gmail.com';
   $mail->SMTPAuth   = true;
-  $mail->Username   = 'ianalexhart@gmail.com';
-  $mail->Password   = 'bluesnow7790';
+  $mail->Username   = getenv('MAIL_USERNAME');
+  $mail->Password   = getenv('MAIL_PASSWORD');
   $mail->SMTPSecure = 'tls1.3';
   $mail->Port       = 25;
 
@@ -67,7 +67,7 @@ function sendEmailVerification($email, $token)
   $mail->isHTML(true);
   $mail->Subject = 'Reset Password on Bookstop';
   //CHANGE LINK ADDRESS
-  $mail->Body    = "Hi there, click on this <a href=\"https://murmuring-ridge-11006.herokuapp.com/newpassword.php?token=" . $token . "\">link</a> to reset your password on our site";
+  $mail->Body    = "Hi there, click on this <a href=\"http://https://murmuring-ridge-11006.herokuapp.com/newpassword.php?token=" . $token . "\">link</a> to reset your password on our site";
 
   $mail->send();
 
