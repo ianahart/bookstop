@@ -1,5 +1,5 @@
 <?php
-include('../config/db.php');
+include(dirname(__DIR__) . '/config/db.php');
 
 session_start();
 
@@ -127,11 +127,11 @@ if (isset($_POST['userlist'])) {
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include('./templates/head.php'); ?>
+<?php include('public/templates/head.php'); ?>
 
 <body>
   <div class="content">
-    <?php include('./templates/nav.php'); ?>
+    <?php include('public/templates/nav.php'); ?>
     <div class="search-container">
       <form class="user-list-form" action="users.php" method="POST">
         <button class="user-list-btn" type="submit" name="userlist"><i class="fas fa-users"></i>User List</button>
@@ -200,7 +200,7 @@ if (isset($_POST['userlist'])) {
       <?php endif; ?>
     </div>
   </div>
-  <?php include('./templates/footer.php'); ?>
+  <?php include('public/templates/footer.php'); ?>
 </body>
 
 </html>
