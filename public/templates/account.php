@@ -1,6 +1,6 @@
 <?php
 
-include(dirname(__DIR__) . '/config/db.php');
+include(dirname(__DIR__) . '../config/db.php');
 
 
 
