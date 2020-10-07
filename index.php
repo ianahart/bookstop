@@ -60,4 +60,7 @@ switch ($request) {
   case "/myfriends.php":
     include __DIR__ . '/public/myfriends.php';
     break;
+  case "/mymessages.php":
+    include __DIR__ . '/public/mymessages.php';
+    break;
 }

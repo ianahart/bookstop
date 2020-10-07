@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../config/db.php');
+include(dirname(__DIR__) . '/config/db.php');
 
 if (!isset($_SESSION['user'])) {
   header("Location: login.php");
@@ -209,11 +209,11 @@ if (isset($_POST['reply'])) {
 
 <!DOCTYPE html>
 <html lang="en">
-<?php include('./templates/head.php'); ?>
+<?php include('public/templates/head.php'); ?>
 
 <body>
   <div class="content">
-    <?php include('./templates/nav.php'); ?>
+    <?php include('public/templates/nav.php'); ?>
     <div class="messages-container">
       <header>
         <h1><?php echo htmlspecialchars($currentUser['username']); ?>, You have <span class="messages-count">(<?php echo $numOfNewMessages; ?>)</span> new messages...</h1>
@@ -273,8 +273,8 @@ if (isset($_POST['reply'])) {
       <?php endif; ?>
     </div>
   </div>
-  <?php include('./templates/footer.php'); ?>
-  <script src="js/messages.js"></script>
+  <?php include('public/templates/footer.php'); ?>
+  <script src="public/js/messages.js"></script>
 </body>
 
 </html>
