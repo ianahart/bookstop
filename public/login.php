@@ -71,7 +71,7 @@ function flagIPAddress($conn, $ipAddress)
 
 function deleteExpiredIPAddresses($conn, $ipAddress)
 {
-  $secondsToWait = 60;
+  $secondsToWait = 600;
   $currentTime = time() - $secondsToWait;
   $sql = "DELETE FROM login_attempts WHERE UNIX_TIMESTAMP(created_at) < $currentTime AND ip_address = '$ipAddress'";
 
