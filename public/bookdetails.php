@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../config/db.php');
+include(dirname(__DIR__) . '/config/db.php');
 
 $userId = null;
 if (isset($_SESSION['user'])) {
@@ -184,12 +184,12 @@ if (isset($_GET['rating'])) {
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include('./templates/head.php'); ?>
+<?php include('public/templates/head.php'); ?>
 
 <body>
   <div class="content">
 
-    <?php include('./templates/nav.php'); ?>
+    <?php include('public/templates/nav.php'); ?>
     <?php if ($book) : ?>
       <div class="detail-container">
         <div class="modal hide-modal">
@@ -211,7 +211,7 @@ if (isset($_GET['rating'])) {
           <h5><span class="details-submitted">Book Submitted By:</span> <span><?php echo htmlspecialchars($user['username']); ?></span></h5>
 
         </div>
-        <img src="<?php echo empty($book['image']) ? 'img/book.png' : htmlspecialchars($book['image']); ?>" alt="book" />
+        <img src="<?php echo empty($book['image']) ? 'public/img/book.png' : htmlspecialchars($book['image']); ?>" alt="book" />
         <h4>Written By: <span><?php echo htmlspecialchars($book['author']) ?></span></h4>
         <div class="genre-container">
           <p>Genres:</p>
@@ -236,12 +236,12 @@ if (isset($_GET['rating'])) {
     <?php else : ?>
       <h2 class="book-error">This book does not exist</h2>
     <?php endif; ?>
-    <?php include('./templates/reviews.php'); ?>
+    <?php include('public/templates/reviews.php'); ?>
   </div>
 
-  <?php include('./templates/footer.php'); ?>
-  <script src="js/modal.js"></script>
-  <script src="js/starRating.js"></script>
+  <?php include('public/templates/footer.php'); ?>
+  <script src="public/js/modal.js"></script>
+  <script src="public/js/starRating.js"></script>
 </body>
 
 </html>

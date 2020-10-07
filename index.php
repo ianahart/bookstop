@@ -40,4 +40,7 @@ switch ($request) {
     break;
   case "/viewprofile.php?userId=" . $_GET['userId']:
     include __DIR__ . '/public/viewprofile.php';
+    break;
+  case "/bookdetails.php?id=" . $_GET['id'];
+    include __DIR__ . '/public/bookdetails.php';
 }
