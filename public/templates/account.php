@@ -6,7 +6,6 @@ include(dirname(__DIR__) . '/config/db.php');
 
 
 
-
 function getPicture($conn, $id)
 {
   $sql = "SELECT picture FROM profiles WHERE userId = '$id'";
