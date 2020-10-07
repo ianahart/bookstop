@@ -103,19 +103,13 @@ function deleteRecievedMessages($conn, $name)
 if (isset($_POST['deleteaccount'])) {
   $userId = $_SESSION['user'];
   $userName = getUserName($conn, $userId);
+
   deleteSentMessages($conn, $userName);
   deleteRecievedMessages($conn, $userName);
-
   deleteFromFriends($conn, $userId);
-
   deleteAssociatedBooks($conn, $userId);
-
-
-
   deleteProfile($conn, $userId);
-
   deleteReviews($conn, $userId);
-
   deleteUser($conn, $userId);
 
 
@@ -123,10 +117,9 @@ if (isset($_POST['deleteaccount'])) {
 
   session_destroy();
 
-  header('Location: login.php');
+  header('Location: index.php');
 }
 ?>
-
 
 <p>Are you sure you want to delete your account?</p>
 <div class="delete-account-form-container">
