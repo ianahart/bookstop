@@ -44,23 +44,29 @@ function flagIPAddress($conn)
   mysqli_query($conn, $sql);
 }
 
-function proxyRequest()
+
+function lookup()
 {
-  $fixieUrl = getenv("FIXIE_URL");
-  $parsedFixieUrl = parse_url($fixieUrl);
+  $quotaguard_env = getenv("QUOTAGUARDSTATIC_URL");
+  $quotaguard = parse_url($quotaguard_env);
 
-  $proxy = $parsedFixieUrl['host'] . ":" . $parsedFixieUrl['port'];
-  $proxyAuth = $parsedFixieUrl['user'] . ":" . $parsedFixieUrl['pass'];
+  $proxyUrl       = $quotaguard['host'] . ":" . $quotaguard['port'];
+  $proxyAuth       = $quotaguard['user'] . ":" . $quotaguard['pass'];
 
-  $ch = curl_init($_SERVER['REQUEST_URI']);
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-  curl_setopt($ch, CURLOPT_PROXY, $proxy);
+  $url = "http://ip.quotaguard.com/";
+
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, $url);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($ch, CURLOPT_PROXY, $proxyUrl);
+  curl_setopt($ch, CURLOPT_PROXYAUTH, CURLAUTH_BASIC);
   curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyAuth);
-  curl_close($ch);
-  return $ch;
+  $response = curl_exec($ch);
+  return $response;
 }
 
-$response = proxyRequest();
+$res = lookup();
+
 
 
 function deleteExpiredIPAddresses($conn)
@@ -158,7 +164,7 @@ if (isset($_POST['submit'])) {
     <div class="login-form">
       <form id="login-form" action="login.php" method="POST" autocomplete="false">
         <h1>Login</h1>
-        <p><?php print_r($response); ?></p>
+        <p><?php print_r($res); ?></p>
         <?php if (isset($_SESSION['login_attempts']) && $_SESSION['login_attempts'] > 4) : ?>
           <p>Too many unsuccessful Login attempts. Please wait ten minutes and refresh the page.</p>
         <?php else : ?>
