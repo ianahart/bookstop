@@ -106,17 +106,17 @@ if (isset($_POST['deleteaccount'])) {
   deleteSentMessages($conn, $userName);
   deleteRecievedMessages($conn, $userName);
 
-  // deleteFromFriends($conn, $userId);
+  deleteFromFriends($conn, $userId);
 
-  // deleteAssociatedBooks($conn, $userId);
+  deleteAssociatedBooks($conn, $userId);
 
 
 
-  // deleteProfile($conn, $userId);
+  deleteProfile($conn, $userId);
 
-  // deleteReviews($conn, $userId);
+  deleteReviews($conn, $userId);
 
-  // deleteUser($conn, $userId);
+  deleteUser($conn, $userId);
 
 
   mysqli_close($conn);
