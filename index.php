@@ -54,5 +54,7 @@ switch ($request) {
     break;
   case "/mybooks.php?userId=" . $_GET['userId']:
     include __DIR__ . '/public/mybooks.php';
+  case "/editprofile.php?userId=" . $_GET['userId']:
+    include __DIR__ . '/public/editprofile.php';
     break;
 }
