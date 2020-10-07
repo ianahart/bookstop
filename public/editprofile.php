@@ -175,11 +175,11 @@ if (isset($_POST['editprofile'])) {
 
 <!DOCTYPE html>
 <html lang="en">
-<?php include('./templates/head.php'); ?>
+<?php include('public/templates/head.php'); ?>
 
 <body>
   <div class="content">
-    <?php include('./templates/nav.php'); ?>
+    <?php include('public/templates/nav.php'); ?>
     <div class="edit-profile-form">
       <form action="editprofile.php?userId=<?php echo $profileId; ?>" method="POST" enctype='multipart/form-data'>
         <h1>Edit Profile</h1>
@@ -223,7 +223,7 @@ if (isset($_POST['editprofile'])) {
       </form>
     </div>
   </div>
-  <?php include('./templates/footer.php'); ?>
+  <?php include('public/templates/footer.php'); ?>
 </body>
 
 </html>
