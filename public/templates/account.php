@@ -1,6 +1,6 @@
 <?php
-session_start();
-include(dirname(__DIR__) . '/config/db.php');
+
+include(dirname(__DIR__) . '/templates/config/db.php');
 
 
 function getPicture($conn, $id)
