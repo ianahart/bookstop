@@ -52,7 +52,7 @@ function proxyRequest()
   $proxy = $parsedFixieUrl['host'] . ":" . $parsedFixieUrl['port'];
   $proxyAuth = $parsedFixieUrl['user'] . ":" . $parsedFixieUrl['pass'];
 
-  $ch = curl_init('https://murmuring-ridge-11006.herokuapp.com/');
+  $ch = curl_init($_SERVER['REQUEST_URI']);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   curl_setopt($ch, CURLOPT_PROXY, $proxy);
   curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyAuth);
@@ -60,7 +60,7 @@ function proxyRequest()
 }
 
 $response = proxyRequest();
-print_r($response);
+
 
 function deleteExpiredIPAddresses($conn)
 {
