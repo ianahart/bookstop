@@ -1,5 +1,5 @@
 <?php
-include('../config/db.php');
+include(dirname(__DIR__) . '/config/db.php');
 session_start();
 
 if (!isset($_SESSION['user'])) {
@@ -310,11 +310,11 @@ $friends = getCurrentUserFriends($conn, $_SESSION['profileId']);
 
 <!DOCTYPE html>
 <html lang="en">
-<?php include('./templates/head.php'); ?>
+<?php include('public/templates/head.php'); ?>
 
 <body>
   <div class="content">
-    <?php include('./templates/nav.php'); ?>
+    <?php include('public/templates/nav.php'); ?>
     <div class="friend-requests-container">
       <div class="requests-header">
         <h3>You have <span>(<?php echo isset($friendRequestData) ? htmlspecialchars(count($friendRequestData)) : '0'; ?>)</span> friend requests</h3>
@@ -326,7 +326,7 @@ $friends = getCurrentUserFriends($conn, $_SESSION['profileId']);
               <h3><?php echo htmlspecialchars($friendRequest['username']); ?></h3>
               <p><?php echo htmlspecialchars($friendRequest['joined']); ?></p>
               <div class="friend-request-image-container">
-                <img src="<?php echo !empty($friendRequest['picture']) ? $friendRequest['picture'] : 'img/no-profile-pic.png'; ?>" alt="<?php echo htmlspecialchars($friendRequest['username']); ?>" />
+                <img src="<?php echo !empty($friendRequest['picture']) ? $friendRequest['picture'] : 'public/img/no-profile-pic.png'; ?>" alt="<?php echo htmlspecialchars($friendRequest['username']); ?>" />
               </div>
             </div>
             <div>
@@ -373,7 +373,7 @@ $friends = getCurrentUserFriends($conn, $_SESSION['profileId']);
                 <button type="submit" name="removefriend"><i class="fas fa-user-slash"></i>Unfriend</button>
               </form>
               <div class="friend-picture-container">
-                <a href="viewprofile.php?userId=<?php echo htmlspecialchars($friend['userId']); ?>"><img src="<?php echo !empty($friend['picture']) ? $friend['picture'] : 'img/no-profile-pic.png'; ?>" alt="<?php echo htmlspecialchars($friend['username']); ?>" /></a>
+                <a href="viewprofile.php?userId=<?php echo htmlspecialchars($friend['userId']); ?>"><img src="<?php echo !empty($friend['picture']) ? $friend['picture'] : 'public/img/no-profile-pic.png'; ?>" alt="<?php echo htmlspecialchars($friend['username']); ?>" /></a>
               </div>
             </div>
           <?php endforeach; ?>
@@ -382,8 +382,8 @@ $friends = getCurrentUserFriends($conn, $_SESSION['profileId']);
     </div>
   </div>
 
-  <?php include('./templates/footer.php'); ?>
-  <script src="js/myFriends.js"></script>
+  <?php include('public/templates/footer.php'); ?>
+  <script src="public/js/myFriends.js"></script>
 </body>
 
 </html>

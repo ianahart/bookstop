@@ -54,7 +54,7 @@ if (isset($_SESSION['profileId'])) {
     </div>
     <?php if (isset($_SESSION['profileId'])) : ?>
       <div class="my-friends-link">
-        <a href="myfriends.php?"><i class="fas fa-user-friends"></i>Friends</a>
+        <a href="myfriends.php"><i class="fas fa-user-friends"></i>Friends</a>
       </div>
       <div class="my-messages-link">
         <a href="mymessages.php"><i class="fas fa-comment"></i>Messages</a>
