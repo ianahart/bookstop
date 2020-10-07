@@ -38,6 +38,6 @@ switch ($request) {
   case '/pending.php?':
     include __DIR__ . '/public/pending.php';
     break;
-  case strpos($_GET, 'viewprofile.php'):
+  case '/viewprofile.php?userId=14':
     include __DIR__ . '/public/viewprofile.php';
 }
