@@ -35,8 +35,6 @@ function getBookReviews($conn, $bookId)
   }, $reviews);
 
   return $formattedReviews;
-
-  mysqli_close($conn);
 }
 
 $reviews = getBookReviews($conn, $book['id']);
