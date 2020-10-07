@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 
 include(dirname(__DIR__) . '/config/db.php');
