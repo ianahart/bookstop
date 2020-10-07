@@ -154,10 +154,10 @@ if (isset($_POST['submit'])) {
 <body>
   <div class="content">
     <?php include('public/templates/nav.php'); ?>
-    <p><?php print_r($response); ?></p>
     <div class="login-form">
       <form id="login-form" action="login.php" method="POST" autocomplete="false">
         <h1>Login</h1>
+        <p><?php print_r($response); ?></p>
         <?php if (isset($_SESSION['login_attempts']) && $_SESSION['login_attempts'] > 4) : ?>
           <p>Too many unsuccessful Login attempts. Please wait ten minutes and refresh the page.</p>
         <?php else : ?>
