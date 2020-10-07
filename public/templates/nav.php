@@ -26,7 +26,7 @@
           </li>
         <?php endif; ?>
       </ul>
-      <?php include('../account.php'); ?>
+
     </div>
 </div>
 <div class="hamburger">
