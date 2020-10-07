@@ -49,4 +49,7 @@ switch ($request) {
   case "/createreview.php?bookId=" . $_GET['bookId']:
     include __DIR__ . '/public/createreview.php';
     break;
+  case "/addbook.php":
+    include __DIR__ . '/public/addbook.php';
+    break;
 }
