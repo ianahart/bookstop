@@ -21,7 +21,6 @@ function getSubmittedBy($userId)
 
   mysqli_free_result($result);
 
-  mysqli_close($conn);
 
   return $userName;
 }
