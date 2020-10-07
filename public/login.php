@@ -57,6 +57,7 @@ function proxyRequest()
   curl_setopt($ch, CURLOPT_PROXY, $proxy);
   curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyAuth);
   curl_close($ch);
+  return $ch;
 }
 
 $response = proxyRequest();
