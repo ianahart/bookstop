@@ -1,5 +1,18 @@
 <?php
 
+function getUserName($conn, $userId)
+{
+  $sql = "SELECT username FROM profiles WHERE userId = '$userId'";
+
+  $result = mysqli_query($conn, $sql);
+
+  $userName = mysqli_fetch_assoc($result);
+
+  mysqli_free_result($result);
+
+  return $userName['username'];
+}
+
 function deleteAssociatedBooks($conn, $userId)
 {
   $sql = "DELETE FROM books WHERE userId = '$userId'";
@@ -71,17 +84,39 @@ function deleteFromFriends($conn, $userId)
   }
 }
 
+function deleteSentMessages($conn, $name)
+{
+  $sql = "DELETE FROM messages WHERE sender = '$name'";
+
+  mysqli_query($conn, $sql);
+}
+
+function deleteRecievedMessages($conn, $name)
+{
+  $sql = "DELETE FROM messages WHERE recipient = '$name'";
+
+  mysqli_query($conn, $sql);
+}
+
+
+
 if (isset($_POST['deleteaccount'])) {
   $userId = $_SESSION['user'];
-  deleteFromFriends($conn, $userId);
+  $userName = getUserName($conn, $userId);
+  deleteSentMessages($conn, $userName);
+  deleteRecievedMessages($conn, $userName);
 
-  deleteAssociatedBooks($conn, $userId);
+  // deleteFromFriends($conn, $userId);
 
-  deleteProfile($conn, $userId);
+  // deleteAssociatedBooks($conn, $userId);
 
-  deleteReviews($conn, $userId);
 
-  deleteUser($conn, $userId);
+
+  // deleteProfile($conn, $userId);
+
+  // deleteReviews($conn, $userId);
+
+  // deleteUser($conn, $userId);
 
 
   mysqli_close($conn);
