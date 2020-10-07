@@ -115,7 +115,7 @@ if (isset($_POST['submit'])) {
     <?php include('public/templates/nav.php'); ?>
     <div class="forgot-password-form">
       <form action="forgotpassword.php" method="POST" autocomplete="false">
-        <h1><?php echo getenv('MAIL_USERNAME'); ?></h1>
+        <h1>Reset Password</h1>
         <div class="input-group">
           <label>Email:</label>
           <input type="text" name="email" />

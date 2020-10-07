@@ -35,7 +35,7 @@ switch ($request) {
     include __DIR__ . '/public/forgotpassword.php';
     break;
     // FIX THIS
-  case '/pending.php?':
+  case '/pending.php?email=' . $_GET['email']:
     include __DIR__ . '/public/pending.php';
     break;
   case "/viewprofile.php?userId=" . $_GET['userId']:
