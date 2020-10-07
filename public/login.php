@@ -33,18 +33,6 @@ $userLoggedIn = false;
 $errors = [];
 
 
-
-
-function flagIPAddress($conn)
-{
-  $ipAddress = $_SERVER['REMOTE_ADDR'];
-
-  $sql = "INSERT INTO login_attempts (ip_address) VALUES ('$ipAddress')";
-
-  mysqli_query($conn, $sql);
-}
-
-
 function lookup()
 {
   $quotaguard_env = getenv("QUOTAGUARDSTATIC_URL");
@@ -65,15 +53,26 @@ function lookup()
   return $response;
 }
 
-$res = lookup();
+$ipAddress = lookup();
+
+function flagIPAddress($conn, $ipAddress)
+{
+
+
+  $sql = "INSERT INTO login_attempts (ip_address) VALUES ('$ipAddress')";
+
+  mysqli_query($conn, $sql);
+}
 
 
 
-function deleteExpiredIPAddresses($conn)
+
+
+
+function deleteExpiredIPAddresses($conn, $ipAddress)
 {
   $secondsToWait = 60;
   $currentTime = time() - $secondsToWait;
-  $ipAddress = $_SERVER['REMOTE_ADDR'];
   $sql = "DELETE FROM login_attempts WHERE UNIX_TIMESTAMP(created_at) < $currentTime AND ip_address = '$ipAddress'";
 
   if (mysqli_query($conn, $sql)) {
@@ -83,7 +82,7 @@ function deleteExpiredIPAddresses($conn)
   }
 }
 
-deleteExpiredIPAddresses($conn);
+deleteExpiredIPAddresses($conn, $ipAddress);
 
 
 
@@ -136,7 +135,7 @@ if (isset($_POST['submit'])) {
       $_SESSION['login_attempts']++;
 
       if ($_SESSION['login_attempts'] > 4) {
-        flagIPAddress($conn);
+        flagIPAddress($conn, $ipAddress);
       }
     }
   }
@@ -164,7 +163,7 @@ if (isset($_POST['submit'])) {
     <div class="login-form">
       <form id="login-form" action="login.php" method="POST" autocomplete="false">
         <h1>Login</h1>
-        <p><?php print_r(unserialize($res)); ?></p>
+        <p><?php print_r($res); ?></p>
         <?php if (isset($_SESSION['login_attempts']) && $_SESSION['login_attempts'] > 4) : ?>
           <p>Too many unsuccessful Login attempts. Please wait ten minutes and refresh the page.</p>
         <?php else : ?>
